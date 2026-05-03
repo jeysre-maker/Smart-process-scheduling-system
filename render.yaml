@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: smart-process-scheduler-api
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
+    healthCheckPath: /api/health
+    autoDeploy: true
